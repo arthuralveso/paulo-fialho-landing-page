@@ -16,16 +16,14 @@
 
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   color: var(--on-navy);
 }
 
 .brand .mark {
-  font-family: 'Fraunces', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--coral);
+  height: 36px;
+  width: auto;
 }
 
 .brand .name {
