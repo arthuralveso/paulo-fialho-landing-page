@@ -1,0 +1,19 @@
+<section class="section section-dark" id="areas" aria-labelledby="areas-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Áreas de atuação</p>
+      <h2 id="areas-heading">Como eu posso te ajudar</h2>
+    </div>
+    <div class="areas-list">
+      @for (area of areas; track area.title) {
+        <article class="area">
+          <div class="idx" aria-hidden="true">{{ area.index }}</div>
+          <div>
+            <h3>{{ area.title }}</h3>
+            <p>{{ area.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

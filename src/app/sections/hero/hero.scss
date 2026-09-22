@@ -1,0 +1,135 @@
+.hero {
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgba(228, 142, 114, 0.14), transparent 55%), var(--navy-900);
+  color: var(--on-navy);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+  padding: 92px 0 96px;
+}
+
+.hero-eyebrow {
+  color: var(--coral);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: var(--coral);
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5.4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.hero h1 .role {
+  display: block;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 400;
+  color: var(--on-navy-dim);
+  letter-spacing: 0.01em;
+  margin-top: 14px;
+}
+
+.hero p.lead {
+  color: var(--on-navy);
+  max-width: 46ch;
+  font-size: 1.12rem;
+  margin-bottom: 36px;
+  opacity: 0.92;
+}
+
+.portrait {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 380px;
+}
+
+.portrait::before {
+  content: '';
+  position: absolute;
+  inset: 22px -22px -22px 22px;
+  border: 1px solid var(--coral);
+  border-radius: var(--radius);
+  z-index: 0;
+}
+
+.portrait-frame {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--navy-700), var(--navy-900));
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+.portrait-frame img {
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-anim {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+
+  .hero-anim.d1 {
+    animation-delay: 0.05s;
+  }
+  .hero-anim.d2 {
+    animation-delay: 0.15s;
+  }
+  .hero-anim.d3 {
+    animation-delay: 0.25s;
+  }
+  .hero-anim.d4 {
+    animation-delay: 0.35s;
+  }
+
+  .portrait {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s forwards;
+  }
+
+  @keyframes rise {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 72px 0;
+  }
+
+  .portrait {
+    justify-self: start;
+    max-width: 320px;
+    order: -1;
+  }
+}

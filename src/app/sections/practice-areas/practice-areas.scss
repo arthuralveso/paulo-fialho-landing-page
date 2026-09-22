@@ -1,0 +1,35 @@
+.areas-list {
+  border-top: 1px solid var(--line-navy);
+}
+
+.area {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 28px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line-navy);
+  align-items: start;
+  transition: padding-left 0.25s ease;
+}
+
+.area:hover {
+  padding-left: 12px;
+}
+
+.area .idx {
+  font-family: 'Fraunces', serif;
+  color: var(--coral);
+  font-size: 1.4rem;
+}
+
+.area h3 {
+  font-size: 1.5rem;
+  color: var(--on-navy);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.area p {
+  color: var(--on-navy-dim);
+  max-width: 68ch;
+}

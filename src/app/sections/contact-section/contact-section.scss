@@ -1,0 +1,149 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+}
+
+.form-card {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 40px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 13px 15px;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--ink);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  border-color: var(--coral);
+  box-shadow: var(--focus-ring);
+}
+
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: #c0392b;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error-list {
+  list-style: none;
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  display: grid;
+  gap: 2px;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--navy-900);
+  color: var(--on-navy);
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-submit:hover:not(:disabled) {
+  background: var(--navy-700);
+}
+
+.form-submit:disabled {
+  background: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.contact-info {
+  padding-top: 6px;
+}
+
+.info-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-row:first-child {
+  padding-top: 0;
+}
+
+.info-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(228, 142, 114, 0.12);
+  color: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.info-row .label {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.info-row .value {
+  font-size: 1.05rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.contact-info .btn-primary {
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-card {
+    padding: 28px;
+  }
+}

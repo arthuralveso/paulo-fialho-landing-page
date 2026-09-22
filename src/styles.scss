@@ -1,1 +1,199 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles: design tokens, resets, and base typography shared by every component. */
+
+:root {
+  --navy-900: #16233f;
+  --navy-800: #1c2c4e;
+  --navy-700: #263a63;
+  --coral: #e48e72;
+  --coral-soft: #eeb49f;
+  --steel: #c7d6e6;
+  --paper: #f5f6f9;
+  --paper-2: #fafbfc;
+  --ink: #1a2438;
+  --muted: #5c6678;
+  --on-navy: #e7eef6;
+  --on-navy-dim: #a9bad0;
+  --line: rgba(26, 36, 56, 0.12);
+  --line-navy: rgba(199, 214, 230, 0.16);
+  --radius: 14px;
+  --maxw: 1140px;
+  --focus-ring: 0 0 0 3px rgba(228, 142, 114, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: 'Instrument Sans', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.serif {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Consistent, visible focus indicator everywhere (WCAG 2.4.7). */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 12px;
+  z-index: 100;
+  background: var(--coral);
+  color: var(--navy-900);
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 999px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-head {
+  margin-bottom: 48px;
+  max-width: 60ch;
+}
+
+.section-head .kicker {
+  color: var(--coral);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: var(--ink);
+}
+
+.section-dark {
+  background: var(--navy-900);
+  color: var(--on-navy);
+}
+
+.section-dark .section-head h2 {
+  color: var(--on-navy);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--coral);
+  color: var(--navy-900);
+  font-weight: 600;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(228, 142, 114, 0.28);
+}
+
+.btn-primary:hover {
+  background: var(--coral-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(228, 142, 114, 0.36);
+}
+
+.btn-primary svg {
+  width: 19px;
+  height: 19px;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+
+  .wrap {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+}

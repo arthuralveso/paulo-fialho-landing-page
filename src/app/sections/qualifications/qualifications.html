@@ -1,0 +1,26 @@
+<section class="section qualifications" id="formacao" aria-labelledby="formacao-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Qualificações</p>
+      <h2 id="formacao-heading">Formação e atuação institucional</h2>
+    </div>
+    <div class="quals-grid">
+      <div class="qual-col">
+        <h3 class="qual-title">Pós-graduações</h3>
+        <ul class="qual-list">
+          @for (item of postGraduate; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+      <div class="qual-col">
+        <h3 class="qual-title">Atuação institucional</h3>
+        <ul class="qual-list">
+          @for (item of institutional; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

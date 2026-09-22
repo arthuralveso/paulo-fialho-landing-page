@@ -1,0 +1,33 @@
+<section class="section" id="sobre" aria-labelledby="sobre-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Sobre</p>
+      <h2 id="sobre-heading">Um pouco sobre mim</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>
+          Advogado atuante desde 2016, dedico minha trajetória à defesa de direitos e à resolução
+          eficaz de conflitos nas áreas trabalhista e previdenciária. Acredito que a excelência
+          jurídica exige tanto rigor técnico quanto sensibilidade humana para compreender a
+          realidade de cada cliente.
+        </p>
+        <p>
+          Com experiência consolidada, atuo de forma estratégica para obter a indenização devida,
+          diminuir riscos e estruturar planejamentos de longo prazo. Minha prática combina
+          atualização jurídica constante com comunicação clara, mantendo você informado e seguro do
+          início ao fim do processo.
+        </p>
+      </div>
+
+      <aside class="credentials" aria-label="Credenciais profissionais">
+        @for (item of credentials; track item.label) {
+          <div class="cred">
+            <div class="label">{{ item.label }}</div>
+            <div class="value">{{ item.value }}</div>
+          </div>
+        }
+      </aside>
+    </div>
+  </div>
+</section>
